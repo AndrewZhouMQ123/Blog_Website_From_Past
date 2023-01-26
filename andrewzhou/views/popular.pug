@@ -1,0 +1,12 @@
+.mb-4
+  h3  Popular Posts
+  each post in popular
+    .row
+      .col-md-4
+        img.img-thumbnail(src=post.thumbnail)
+      .col-md-8
+        - var link = '/blog/' + post.id
+        a(href=link)
+          p.mb-1 #{post.title}
+        p.mb-1 #{post.date}
+        p.mb-1 #{post.author}

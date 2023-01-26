@@ -1,0 +1,42 @@
+//- [
+  {
+    year: 2018,
+    months: [
+        {
+          month: January,
+          blogs: [
+            {
+              date: 12
+              title: "some title",
+              id: 5
+            }
+          ]
+        }
+      ]
+    }
+      ]
+
+
+.container
+  .row
+    h3
+      | Library
+  .row
+    ul.nav.nav-list
+      each year in years
+        li.nav-header
+          p
+            b
+              | #{year.year}
+          - var myId = 'year' + year.year
+          ul(id=myId)
+            each month in year.months
+              - var target = '#' + month.month
+              li(data-toggle='collapse', data-target=target)
+                | #{month.month}
+                - var cId = month.month
+                ul(id=cId class="collapse")
+                  each blog in month.blogs
+                    li
+                      - var link = '/blog/' + blog.id
+                      a(href=link) #{blog.title} | #{month.month} #{blog.date}

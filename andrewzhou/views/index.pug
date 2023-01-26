@@ -1,0 +1,104 @@
+doctype html
+html(lang='en')
+  head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    // Bootstrap CSS
+    link(href='css/bootstrap.min.css', rel='stylesheet')
+    link(href='css/sticky-footer-navbar.css', rel='stylesheet')
+    title Andrew Zhou's Personal Blog
+  body
+    img.rounded.mx-auto.d-block(src='images/stars.jpg', height='350', width='1400')
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-5.fixed-top
+      .container
+        a.navbar-brand Andrew Zhou's Personal Blog
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarNavDropdown.collapse.navbar-collapse.justify-content-end
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link(href='https://andrewzhou.herokuapp.com') Home
+            li.nav-item
+              a.nav-link(href='/about') About
+            li.nav-item
+              a.nav-link(href='/contact') Contact
+        form.form-inline
+          input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search')
+          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+    // start content
+    .container
+      .row.mb-1
+          // side bar
+          .col-xs-2.col-lg-2
+          .col-xs-6.col-lg-6
+            each blog in content
+              .mb-6
+                - var ref = '/blog/' + blog.id
+                a(href=ref)
+                  h1 #{blog.title}
+                h3 #{blog.description}
+                div
+                  ul.navbar-nav.d-inline
+                    li.nav-item.d-inline.mr-4
+                      h3.d-inline #{blog.author}
+                    li.nav-item.d-inline.mr-4
+                      h3.d-inline #{blog.date}
+              //- // 2nd post
+              //- .mb-4
+              //-   a(href='blog2.html')
+              //-     h3 Only My Rail Gun
+              //-   p
+              //-     | Original Composer: Fripside. Arrangments belong to Animenz.
+              //-   p Performed by Andrew Zhou.
+              //-   div
+              //-     ul.navbar-nav.d-inline
+              //-       li.nav-item.d-inline.mr-4
+              //-         p.d-inline Andrew Zhou
+              //-       li.nav-item.d-inline.mr-4
+              //-         p.d-inline 26 May 2018
+              //- // 3rd Post
+              //- .mb-4
+              //-   a(href='blog3.html')
+              //-     h3 God Knows
+              //-   p
+              //-     | Original Composer: Aya Hirano. Arrangments belong to Marasy8.
+              //-   p Performed by Andrew Zhou.
+              //-   div
+              //-     ul.navbar-nav.d-inline
+              //-       li.nav-item.d-inline.mr-4
+              //-         p.d-inline Andrew Zhou
+              //-       li.nav-item.d-inline.mr-4
+              //-         p.d-inline 26 May 2018
+              //- .mb-4
+              //-   a(href='blog4.html')
+              //-     h3 Piano piece for grandpa
+              //-   p
+              //-     | I forgot this name of piano piece because it was from years ago.
+              //-   p Performed by Andrew Zhou.
+              //-   div
+              //-     ul.navbar-nav.d-inline
+              //-       li.nav-item.d-inline.mr-4
+              //-         p.d-inline Andrew Zhou
+              //-       li.nav-item.d-inline.mr-4
+              //-         p.d-inline 26 May 2018
+          // side bar
+          .col-xs-4.col-lg-4
+            .container
+            .row
+              .mb-4
+                h3  Follow Me
+                a.btn.btn-danger.mb-1(href='https://www.youtube.com/channel/UCb6peitcP49lRPxafcaML7w/featured?view_as=subscriber') Youtube
+            .row
+              include ./popular.pug
+            .row
+              include  ./library.pug
+    // end of row : content
+    // Optional JavaScript
+    // jQuery first, then Popper.js, then Bootstrap JS
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', integrity='sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T', crossorigin='anonymous')
+  footer.footer
+    .container
+      span.text-muted © 2018 Copyright: MQBLOG

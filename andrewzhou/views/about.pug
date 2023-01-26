@@ -1,0 +1,65 @@
+doctype html
+html(lang='en')
+  head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    // Bootstrap CSS
+    link(href='css/bootstrap.min.css', rel='stylesheet')
+    link(href='css/sticky-footer-navbar.css', rel='stylesheet')
+    title Andrew Zhou's Personal Blog
+  body
+    img.rounded.mx-auto.d-block(src='images/stars.jpg', height='350', width='1400')
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-5.fixed-top
+      .container
+        a.navbar-brand Andrew Zhou's Personal Blog
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarNavDropdown.collapse.navbar-collapse.justify-content-end
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link(href='/') Home
+            li.nav-item
+              a.nav-link(href='/about') About
+            li.nav-item
+              a.nav-link(href='/contact') Contact
+        form.form-inline
+          input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search')
+          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+    // start content
+    .container
+      .row.mb-1
+        .row
+          // side bar
+          .col-xs-2.col-lg-2
+            .container
+          .mb-4
+            h3 About me
+            p
+              | I am Andrew Zhou. This website is a personal blog I started on July 15 2018, with the help of my dad and my brother. I am an anime fan, and I also love music. I am a pianist, and I play the bass guitar as well as the acoustic guitar too.
+            h3 About the Website
+            p
+              | The contents of this websites are blogs posts about music and usually are related to ACG.
+            p
+              | Music includes music videos and music sheets, as well as downloadable mp3s, and that is the main topic of the website.
+            p
+              | ACG stands for ANIME, COMIC AND GAMES. Most of the posts here are related to ACG. You might find some clasical music, or some trending western music. I might do stuff upon request, look at the
+              a(href='contact.html') contact
+              |  page for my email.
+          // side bar
+          .col-xs-3.col-lg-3
+            .container
+              .row
+                .mb-4
+                  h3  Follow Me
+                  a.btn.btn-danger.mb-1(href='https://www.youtube.com/channel/UCb6peitcP49lRPxafcaML7w/featured?view_as=subscriber') Youtube
+              .row
+                include ./popular.pug
+    // Optional JavaScript
+    // jQuery first, then Popper.js, then Bootstrap JS
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', integrity='sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T', crossorigin='anonymous')
+  footer.footer
+    .container
+      span.text-muted © 2018 Copyright: MQBLOG
